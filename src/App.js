@@ -1,25 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import UserProvider from './components/providers/UserProvider';
+import FilterProvider from './components/providers/FilterProvider';
+import FilterButtons from './components/Filter/FilterButtons';
+import UserTable from './components/User/UserTable';
+import UserForm from './components/User/UserForm';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FilterProvider>
+      <UserProvider>
+        <FilterButtons />
+        <UserTable />
+        <UserForm />
+      </UserProvider>
+    </FilterProvider>
   );
 }
 
